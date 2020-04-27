@@ -45,7 +45,7 @@ sf_file_cities <- sf::read_sf("data/sc_cities_shapefile/42MUE250GC_SIR.shp") %>%
 covid19scdata <- readr::read_csv(file = "data/covid19_cases/covid19scdata.csv") %>% 
   dplyr::mutate(city_ibge_code = as.character(city_ibge_code))
 ```
-#### Naturally, some transformations are needed to get to the final dataset that we are gonna work with. Joining the shapefile with the data is a must in the process. After assigning the some data to a polygon in a shapefile, we may call it attribute. Keep in mind that we need to have a sf class object to plot it.
+#### Naturally, some transformations are needed to get to the final dataset that we are gonna work with. Joining the shapefile with the data is a must in the process. After assigning data to a polygon in a shapefile, we may call it attribute. Keep in mind that we need to have a sf class object to plot it.
 ```
 # Joining the shapefile of the cities with the confirmed cases of covid19 per city data
 geodatacovid19sc <- dplyr::left_join(covid19scdata, sf_file_cities, by = c("city_ibge_code"="CD_GEOCMU"))
