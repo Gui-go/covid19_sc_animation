@@ -92,3 +92,4 @@ covid19_sc_animation <- magick::image_read(gganimated)
 magick::image_write(covid19_sc_animation, path="covid19_sc_animation.gif")
 
 # Hope you have liked it.
+
